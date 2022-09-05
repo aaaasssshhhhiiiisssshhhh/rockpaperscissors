@@ -41,7 +41,7 @@ function wins (userChoice, computerChoice){
      result_p.innerHTML = `${letterToWord(userChoice)}${smallUserWord} beats   ${letterToWord(computerChoice)}${smallComputerWord}.you win 🔥`;// ES6 
     // console.log(computer);
     userChoice_div.classList.add("green-glow");
-    setTimeout(()=>userChoice_div.classList.remove("green-glow"), 1000 );
+    setTimeout(()=>userChoice_div.classList.remove("green-glow"), 500 );
 }
 function lost (userChoice, computerChoice){ 
     const userChoice_div = document.getElementById(userChoice);
@@ -56,7 +56,7 @@ function lost (userChoice, computerChoice){
      result_p.innerHTML = `${letterToWord(userChoice)}${smallUserWord} looses to   ${letterToWord(computerChoice)}${smallComputerWord}.you lost 🥲`;// ES6 
     // console.log(computer);
     userChoice_div.classList.add("red-glow");
-    setTimeout( ()=> userChoice_div.classList.remove("red-glow"), 1000 );
+    setTimeout( ()=> userChoice_div.classList.remove("red-glow"), 500 );
     
 }
 function draw (userChoice, computerChoice){
@@ -66,7 +66,7 @@ function draw (userChoice, computerChoice){
     const userChoice_div = document.getElementById(userChoice);
     result_p.innerHTML = `${letterToWord(userChoice)}${smallUserWord} draws   ${letterToWord(computerChoice)}${smallComputerWord}.you draw 🥶`;// ES6 
     userChoice_div.classList.add("gray-glow");
-    setTimeout(()=> userChoice_div.classList.remove("gray-glow"), 1000 );
+    setTimeout(()=> userChoice_div.classList.remove("gray-glow"), 500 );
 }
 
 function game (userChoice){
