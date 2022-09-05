@@ -1,0 +1,4 @@
+v2:
+prompt for rounds(must be odd)
+game runs until rounds
+msg  display

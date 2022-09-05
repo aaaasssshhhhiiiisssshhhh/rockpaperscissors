@@ -8,6 +8,7 @@ const result_p = document.querySelector(".result p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissor_div = document.getElementById("s");
+const reset_btn = document.getElementById("reset-btn");
 
 
 
@@ -41,7 +42,7 @@ function wins (userChoice, computerChoice){
      result_p.innerHTML = `${letterToWord(userChoice)}${smallUserWord} beats   ${letterToWord(computerChoice)}${smallComputerWord}.you win 🔥`;// ES6 
     // console.log(computer);
     userChoice_div.classList.add("green-glow");
-    setTimeout(()=>userChoice_div.classList.remove("green-glow"), 500 );
+    setTimeout(()=>userChoice_div.classList.remove("green-glow"), 200 );
 }
 function lost (userChoice, computerChoice){ 
     const userChoice_div = document.getElementById(userChoice);
@@ -56,7 +57,7 @@ function lost (userChoice, computerChoice){
      result_p.innerHTML = `${letterToWord(userChoice)}${smallUserWord} looses to   ${letterToWord(computerChoice)}${smallComputerWord}.you lost 🥲`;// ES6 
     // console.log(computer);
     userChoice_div.classList.add("red-glow");
-    setTimeout( ()=> userChoice_div.classList.remove("red-glow"), 500 );
+    setTimeout( ()=> userChoice_div.classList.remove("red-glow"), 200 );
     
 }
 function draw (userChoice, computerChoice){
@@ -66,7 +67,7 @@ function draw (userChoice, computerChoice){
     const userChoice_div = document.getElementById(userChoice);
     result_p.innerHTML = `${letterToWord(userChoice)}${smallUserWord} draws   ${letterToWord(computerChoice)}${smallComputerWord}.you draw 🥶`;// ES6 
     userChoice_div.classList.add("gray-glow");
-    setTimeout(()=> userChoice_div.classList.remove("gray-glow"), 500 );
+    setTimeout(()=> userChoice_div.classList.remove("gray-glow"), 200 );
 }
 
 function game (userChoice){
@@ -100,7 +101,12 @@ function game (userChoice){
     }
 }
  
-
+function reset_game(){
+    userScore = 0;
+    computerScore = 0;
+    userScore_span.innerHTML = userScore;
+    computerScore_span.innerHTML = computerScore;
+}
 
 function main (){
 
@@ -116,5 +122,10 @@ scissor_div.addEventListener('click' ,function(){
 // console.log("hey you clicked on scissor");
 game("s");
 })
+reset_btn.addEventListener('click', function(){
+reset_game();
+})
 }
+
 main();
+

@@ -115,3 +115,21 @@ header h1 {
     border: #464647;
     box-shadow: 0 0 10 #25292b;
 }
+
+#btn-container {
+    width: 10%;
+    margin: auto;
+    margin-top: 10px;
+
+}
+
+#reset-btn {
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 13px;
+    font-family: asap, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
