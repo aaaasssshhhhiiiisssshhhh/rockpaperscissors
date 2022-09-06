@@ -1,4 +1,14 @@
+v1:
+computer vs user 
+score board.
+infinite game.
+winner msg display (computer vs user or draw)
+
 v2:
 prompt for rounds(must be odd)
 game runs until rounds
 msg  display
+
+todo:
+minor bug fixes..
+styling task..
