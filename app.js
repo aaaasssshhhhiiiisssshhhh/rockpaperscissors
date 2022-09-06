@@ -10,7 +10,35 @@ const paper_div = document.getElementById("p");
 const scissor_div = document.getElementById("s");
 const reset_btn = document.getElementById("reset-btn");
 
+const winner_span = document.getElementById("winner-message");
 
+
+//get number of rounds
+let totalRounds = prompt("Enter total rounds: ");
+let rounds = 1;
+while(true){
+    if(totalRounds%2==0){
+        totalRounds = prompt("Please enter odd rounds: ");
+    }else{
+        console.log("rounds", totalRounds)
+        break;
+    }
+}
+
+// function checkRounds (){
+//     //check if the number is even
+// if(totalRounds % 2 == 0) {
+//  totalRounds = prompt("Please enter odd rounds: ");
+// }
+
+// // if the number is odd
+// else {
+//     console.log("rounds", totalRounds)
+//     return true;
+// }
+// }
+
+// checkRounds();
 
 function getComputerChoice (){
     const choices = ["r", "p", "s"];
@@ -70,13 +98,24 @@ function draw (userChoice, computerChoice){
     setTimeout(()=> userChoice_div.classList.remove("gray-glow"), 200 );
 }
 
+
+
+
+
+
+
+
 function game (userChoice){
+    console.log("rounds", rounds);
+
+   
     const computerChoice = getComputerChoice();
     // console.log("the user choice :" +userChoice)
     // console.log("the computer choice " +computerChoice);
-
+  
     //choice
-    switch (userChoice + computerChoice){
+    switch (userChoice + computerChoice  ){
+        
         case "rs":
         case "pr":
         case "sp":
@@ -96,9 +135,28 @@ function game (userChoice){
         case "pp":
             // console.log("its a draw");
             draw(userChoice, computerChoice );
-            break;            
+            break; 
+        }
 
+    if(rounds == totalRounds){
+        //check scores
+        console.log("game over");
+        if (userScore> computerScore){
+            // let rounds = console.log("the total number of rounds are",rounds)
+            winner_span.innerHTML = "winner is user ❤️";
+        }
+        else{
+            winner_span.innerHTML = "winner is computer 🤖";
+        }
+        
+    }else{
+        console.log("user score", userScore);
+        console.log("computer score", computerScore);
+        rounds++;
+        // userChoice++;
+        // computerScore ++;
     }
+
 }
  
 function reset_game(){
